@@ -1,1 +1,49 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AymericM - Anonymous Chat (DEBUG)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="ppl-drawer">
+        <i class="material-icons ppl-toggle">close</i>
+        <div class="ppl-contain">
+            <p class="ppl-title">People online</p>
+            <div id="ppl-list">
+            </div>
+        </div>
+    </div>
+    <div id="blackout"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="titlebar">
+                <div class="title-title">Anonymous Chat</div>
+                <i class="material-icons edit-btn">mode_edit</i>
+                <i class="material-icons ppl-toggle">people</i>
+            </div>
+            <div class="edit-dial">
+                <input class="chat-input edit-input" maxlength="30" type="text" value="" placeholder="New username">
+                <button id="submitEdit" type="button" name="edit">Change username !</button>
+            </div>
+            <div class="chat" id="chatbox"></div>
+            <div class="chat-input-container">
+                <div class="col-md-11 col-xs-12 col-lg-11 col-sm-12">
+                    <input id="m" class="chat-input" maxlength="1000" type="text" name="chatInput" value="" placeholder="Your message here">
+                </div>
+                <div class="col-md-1 hidden-xs col-lg-1 hidden-sm">
+                    <button id="submitChat" type="button" name="submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/style.js"></script>
+</body>
+</html>
