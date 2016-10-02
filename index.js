@@ -3,10 +3,10 @@ var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.use(express.static('debug/public'));
+app.use(express.static('public'));
 
 app.get('/', function(req, res){
-    res.status(200).type('html').sendFile(__dirname + '/public/index.html');
+    res.status(200).type('html').sendFile(__dirname + '/index.html');
 });
 
 var clients = {};
