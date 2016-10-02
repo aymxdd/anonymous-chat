@@ -1,0 +1,276 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+body, html {
+    background-color: #34495e;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 45px;
+}
+
+body{overflow-y: auto;}
+
+.row {z-index:2990;}
+
+.titlebar, .titleedge {
+    background-color: #2c3e50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+}
+
+.titlebar {
+    height: 62px;
+    -webkit-app-region: drag;
+    text-align: center;
+    overflow: hidden;
+}
+
+.title-title {
+    cursor: default;
+    font-size: 20px;
+    margin-top: 16px;
+    color: white;
+    align-items: center;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.ppl-toggle, .edit-btn {
+    position: absolute;
+    top: 0;
+    float: right;
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+    padding: 15px;
+    z-index: 3010;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.ppl-toggle {right: 0;}
+.edit-btn {right: 50px;}
+
+.ppl-toggle:hover, .edit-btn:hover {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.edit-dial {
+    display: none;
+    position: fixed;
+    z-index: 2900;
+    top: 55px;
+    right: 5px;
+    width: 400px;
+    height: 160px;
+    background-color: #2c3e50;
+    border: 4px #293745 solid;
+    border-radius: 3px;
+}
+
+#blackout {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 3040;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        display: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #bdc3c7;
+        border-radius: 10px;
+    }
+}
+
+.ppl-drawer {
+    display: none;
+    position: fixed;
+    z-index: 4050;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #2c3e50;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ppl-contain {
+    min-width: 380px;
+}
+
+.ppl-title {
+    color: white;
+    padding: 14px 20px;
+    margin: 0;
+    font-size: 24px;
+    cursor: default;
+}
+
+#ppl-list {
+    overflow: hidden;
+}
+
+.ppl-name {
+    color: white;
+    font-size: 18px;
+    font-weight: 300px;
+    padding: 12px 20px;
+    background-color: #34495e;
+    border-top: 1px solid #2c3e50;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.chat {
+    position: relative;
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    margin: 62px 0 5px 0;
+}
+
+.message-container, .message-container-me {
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.message-container {float: left;}
+.message-container-me {float: right;}
+
+.message-logedin {
+    margin: 5px auto;
+    color: #bdc3c7;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.sender {
+    padding: 0;
+    margin: 0 0 3px 0;
+    color: #bdc3c7;
+    font-size: 12px;
+}
+
+.message, .message-me {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message {
+    background-color: white;
+    float: left;
+}
+
+.message-me {
+    float: right;
+    color: white;
+    background-color: #2980b9;
+}
+
+.link {
+    color: rgb(47, 81, 97);
+}
+
+.chat-input-container {
+    overflow: hidden;
+    background-color: #2c3e50;
+    position: fixed;
+    z-index: 2050;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+}
+
+.chat-input {
+    overflow: hidden;
+    width: 100%;
+    margin: 20px 5px 0 0;
+    padding: 12px 10px;
+    line-height: 16px;
+    height: 50px;
+    background-color: #2c3e50;
+    outline: none;
+    color: white;
+    border-radius: 3px;
+    border: 2px solid #dadddf;
+}
+
+.chat-input::selection {
+    background: rgba(255, 255, 255, 0.996);
+    color: rgba(0, 0, 0, 0.996);
+}
+
+.edit-input {
+    margin: 20px 15px 10px 15px;
+    width: 365px;
+}
+
+#submitEdit {
+    border-radius: 3px;
+    background-color: transparent;
+    border: 2px #18982c solid;
+    color: white;
+    font-size: 1em;
+    padding: 15px;
+    margin: 0 15px;
+    width: 365px;
+    transition: background-color 0.2s;
+}
+
+#submitEdit:hover {background-color: #18982c}
+
+#submitChat {
+    width: 100%;
+    height: 50px;
+    margin: 20px 5px 0 0;
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: white;
+    background-color: white;
+    transition: 0.2s;
+    color: black;
+}
+
+#submitChat:hover {
+    background-color: #bdc3c7;
+}
+
+#submitChat:active {
+    background-color: #95a5a6;
+}
+
+@media screen and (min-width: 1500px) {
+    .message, .message-me {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ppl-drawer {
+        width: 100%;
+    }
+}
