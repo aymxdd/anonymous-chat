@@ -1,0 +1,14 @@
+{
+    "name": "sio-chat",
+    "version": "0.0.8",
+    "description": "my first socket.io app",
+    "dependencies": {
+        "express": "4.10.2",
+        "socket.io": "1.2.0"
+    },"scripts" : {
+        "debug" : "node index-debug.js"
+    },"repository": {
+        "type": "git",
+        "url": "git@gitlab.com:aymericm/anonymous-chat.git"
+    }
+}
