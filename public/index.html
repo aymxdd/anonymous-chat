@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AymericM - Anonymous Chat (DEBUG)</title>
+    <title>Anonymous Chat</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/main.css">
+    <meta name="theme-color" content="#262b2d" />
 </head>
 <body>
     <div class="ppl-drawer">
@@ -23,8 +24,8 @@
         <div class="row">
             <div class="titlebar">
                 <div class="title-title">Anonymous Chat</div>
-                <i class="material-icons edit-btn">mode_edit</i>
-                <i class="material-icons ppl-toggle">people</i>
+                <i class="material-icons edit-btn" title="Change username">mode_edit</i>
+                <i class="material-icons ppl-toggle" title="Connected users">people</i>
             </div>
             <div class="edit-dial">
                 <input class="chat-input edit-input" maxlength="30" type="text" value="" placeholder="New username">
@@ -32,10 +33,10 @@
             </div>
             <div class="chat" id="chatbox"></div>
             <div class="chat-input-container">
-                <div class="col-md-11 col-xs-12 col-lg-11 col-sm-12">
+                <div class="col-md-11 col-xs-12 col-lg-11 col-sm-12 limited-border">
                     <input id="m" class="chat-input" maxlength="1000" type="text" name="chatInput" value="" placeholder="Your message here">
                 </div>
-                <div class="col-md-1 hidden-xs col-lg-1 hidden-sm">
+                <div class="col-md-1 hidden-xs col-lg-1 hidden-sm limited-border">
                     <button id="submitChat" type="button" name="submit">Send</button>
                 </div>
             </div>
