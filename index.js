@@ -3,10 +3,10 @@ var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.use(express.static('public'));
+app.use(express.static('debug/public'));
 
 app.get('/', function(req, res){
-    res.status(200).type('html').sendFile(__dirname + '/index.html');
+    res.status(200).type('html').render('index');
 });
 
 var clients = {};
@@ -62,6 +62,5 @@ io.on('connection', function(socket){
 });
 
 http.listen(3000, function(){
-    console.log('DEBUG BUILD STARTED');
     console.log('listening on *:3000');
 });
