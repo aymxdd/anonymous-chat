@@ -1,7 +1,3 @@
-/*jshint esversion: 6 */
-/*jslint node: true */
-/* jshint loopfunc:true */
-
 function makeUsername() {
     var a = ["Alpha","Bravo","Charlie","Delta","Echo","Fox-Trot","Golf","Hotel","India","Juliet","Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whisky","X-Ray","Yankee","Zoulou"];
     var lock1 = Math.floor((Math.random() * 26));
@@ -92,6 +88,12 @@ $("#m").keydown(function (e) {
     }
 });
 
+$(".edit-input").keydown(function (e) {
+    if (e.keyCode === 13) {
+        editUsername();
+    }
+});
+
 $('#submitChat').click(function(){
     sendMsg();
 });
@@ -107,6 +109,21 @@ function urlify(text) {
     });
 }
 
+var unread = 0;
+
+function unreadTitle(param) {
+    console.log("FIRED");
+    if (param==='new') {
+        unread = unread + 1;
+        document.title = '('+unread+') AymericM - Anonymous Chat';
+    } else if (param==='reset') {
+        unread = 0;
+        document.title = 'AymericM - Anonymous Chat';
+    }
+}
+
+$('html').click(function() {unreadTitle('reset');});
+
 socket.on('chat message', function(msg){
     var msg_txt = msg.msgText.toString();
     msg_txt = urlify(msg_txt);
@@ -114,6 +131,7 @@ socket.on('chat message', function(msg){
         $('#chatbox').append($('<div class="message-container-me"><p class="message-me col-md-9 col-xs-12 col-lg-5 col-sm-10">'+msg_txt+'</p></div>'));
         $("body").scrollTop( $("body")[0].scrollHeight );
     } else {
+        unreadTitle('new');
         $('#chatbox').append($('<div class="message-container"><p class="sender">'+msg.userName+'</p><p class="message col-md-9 col-xs-12 col-lg-5 col-sm-10">'+msg_txt+'</p></div>'));
         $("body").scrollTop( $("body")[0].scrollHeight );
     }
