@@ -2,8 +2,6 @@
 
 A simple real-time chat room made with Javascript (Node.JS and jQuery).
 
-See it in action here: http://aymericm.fr/chat
-
 ## How to install and run:
 
 First, if not already done, install [Node.JS](https://nodejs.org/) and [Git](https://git-scm.com/downloads) on your computer.
