@@ -1,4 +1,4 @@
-# Anonymous Chat (anonymous-chat)
+# Anonymous Chat (NOT MAINTAINED)
 
 A simple real-time chat room made with Javascript (Node.JS and jQuery).
 
